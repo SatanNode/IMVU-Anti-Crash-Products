@@ -1,0 +1,14 @@
+C:\Users\Nulled\source\repos\AntiCrash\AntiCrash\bin\Debug\AntiCrash.exe.config
+C:\Users\Nulled\source\repos\AntiCrash\AntiCrash\bin\Debug\AntiCrash.exe
+C:\Users\Nulled\source\repos\AntiCrash\AntiCrash\bin\Debug\AntiCrash.pdb
+C:\Users\Nulled\source\repos\AntiCrash\AntiCrash\bin\Debug\MetroFramework.Design.dll
+C:\Users\Nulled\source\repos\AntiCrash\AntiCrash\bin\Debug\MetroFramework.dll
+C:\Users\Nulled\source\repos\AntiCrash\AntiCrash\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Nulled\source\repos\AntiCrash\AntiCrash\obj\Debug\AntiCrash.csproj.AssemblyReference.cache
+C:\Users\Nulled\source\repos\AntiCrash\AntiCrash\obj\Debug\AntiCrashApp.MainForm.resources
+C:\Users\Nulled\source\repos\AntiCrash\AntiCrash\obj\Debug\AntiCrash.Properties.Resources.resources
+C:\Users\Nulled\source\repos\AntiCrash\AntiCrash\obj\Debug\AntiCrash.csproj.GenerateResource.cache
+C:\Users\Nulled\source\repos\AntiCrash\AntiCrash\obj\Debug\AntiCrash.csproj.CoreCompileInputs.cache
+C:\Users\Nulled\source\repos\AntiCrash\AntiCrash\obj\Debug\AntiCrash.csproj.Up2Date
+C:\Users\Nulled\source\repos\AntiCrash\AntiCrash\obj\Debug\AntiCrash.exe
+C:\Users\Nulled\source\repos\AntiCrash\AntiCrash\obj\Debug\AntiCrash.pdb

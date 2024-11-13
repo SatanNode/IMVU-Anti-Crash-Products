@@ -1,0 +1,140 @@
+﻿namespace AntiCrashApp
+{
+    partial class MainForm
+    {
+        private MetroFramework.Controls.MetroTabControl metroTabControl1;
+        private MetroFramework.Controls.MetroTabPage tabAntiCrash;
+        private MetroFramework.Controls.MetroTabPage tabAbout;
+        private MetroFramework.Controls.MetroButton btnEnableSound;
+        private MetroFramework.Controls.MetroButton btnDisableSound;
+        private MetroFramework.Controls.MetroLabel lblAbout;
+        private MetroFramework.Controls.MetroLabel lblDescription;
+        private MetroFramework.Controls.MetroLabel lblStatus;
+
+        private void InitializeComponent()
+        {
+            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
+            this.tabAntiCrash = new MetroFramework.Controls.MetroTabPage();
+            this.lblDescription = new MetroFramework.Controls.MetroLabel();
+            this.btnEnableSound = new MetroFramework.Controls.MetroButton();
+            this.btnDisableSound = new MetroFramework.Controls.MetroButton();
+            this.tabAbout = new MetroFramework.Controls.MetroTabPage();
+            this.lblAbout = new MetroFramework.Controls.MetroLabel();
+            this.lblStatus = new MetroFramework.Controls.MetroLabel();
+            this.metroTabControl1.SuspendLayout();
+            this.tabAntiCrash.SuspendLayout();
+            this.tabAbout.SuspendLayout();
+            this.SuspendLayout();
+            this.metroTabControl1.Controls.Add(this.tabAntiCrash);
+            this.metroTabControl1.Controls.Add(this.tabAbout);
+            this.metroTabControl1.Location = new System.Drawing.Point(13, 74);
+            this.metroTabControl1.Name = "metroTabControl1";
+            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.Size = new System.Drawing.Size(493, 271);
+            this.metroTabControl1.TabIndex = 0;
+            this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTabControl1.UseSelectable = true;
+            this.tabAntiCrash.Controls.Add(this.lblDescription);
+            this.tabAntiCrash.Controls.Add(this.btnEnableSound);
+            this.tabAntiCrash.Controls.Add(this.btnDisableSound);
+            this.tabAntiCrash.HorizontalScrollbarBarColor = false;
+            this.tabAntiCrash.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabAntiCrash.HorizontalScrollbarSize = 10;
+            this.tabAntiCrash.Location = new System.Drawing.Point(4, 38);
+            this.tabAntiCrash.Name = "tabAntiCrash";
+            this.tabAntiCrash.Size = new System.Drawing.Size(485, 229);
+            this.tabAntiCrash.TabIndex = 0;
+            this.tabAntiCrash.Text = "Anti Crash";
+            this.tabAntiCrash.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.tabAntiCrash.VerticalScrollbarBarColor = false;
+            this.tabAntiCrash.VerticalScrollbarHighlightOnWheel = false;
+            this.tabAntiCrash.VerticalScrollbarSize = 10;
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescription.Location = new System.Drawing.Point(94, 18);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(294, 40);
+            this.lblDescription.TabIndex = 0;
+            this.lblDescription.Text = "Tired of crashing due to crash products? \r\nClick the green button and red to reve" +
+    "rt back ";
+            this.lblDescription.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblDescription.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.lblDescription.WrapToLine = true;
+            this.btnEnableSound.BackColor = System.Drawing.Color.Red;
+            this.btnEnableSound.ForeColor = System.Drawing.Color.White;
+            this.btnEnableSound.Location = new System.Drawing.Point(269, 96);
+            this.btnEnableSound.Name = "btnEnableSound";
+            this.btnEnableSound.Size = new System.Drawing.Size(213, 102);
+            this.btnEnableSound.TabIndex = 1;
+            this.btnEnableSound.Text = "You are not";
+            this.btnEnableSound.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnEnableSound.UseCustomBackColor = true;
+            this.btnEnableSound.UseCustomForeColor = true;
+            this.btnEnableSound.UseSelectable = true;
+            this.btnEnableSound.Click += new System.EventHandler(this.btnEnableSound_Click);
+            this.btnDisableSound.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnDisableSound.ForeColor = System.Drawing.Color.White;
+            this.btnDisableSound.Location = new System.Drawing.Point(14, 96);
+            this.btnDisableSound.Name = "btnDisableSound";
+            this.btnDisableSound.Size = new System.Drawing.Size(213, 102);
+            this.btnDisableSound.TabIndex = 2;
+            this.btnDisableSound.Text = "You Are Safe";
+            this.btnDisableSound.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnDisableSound.UseCustomBackColor = true;
+            this.btnDisableSound.UseCustomForeColor = true;
+            this.btnDisableSound.UseSelectable = true;
+            this.btnDisableSound.Click += new System.EventHandler(this.btnDisableSound_Click);
+            this.tabAbout.Controls.Add(this.lblAbout);
+            this.tabAbout.HorizontalScrollbarBarColor = false;
+            this.tabAbout.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabAbout.HorizontalScrollbarSize = 10;
+            this.tabAbout.Location = new System.Drawing.Point(4, 38);
+            this.tabAbout.Name = "tabAbout";
+            this.tabAbout.Size = new System.Drawing.Size(485, 229);
+            this.tabAbout.TabIndex = 1;
+            this.tabAbout.Text = "About";
+            this.tabAbout.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.tabAbout.VerticalScrollbarBarColor = false;
+            this.tabAbout.VerticalScrollbarHighlightOnWheel = false;
+            this.tabAbout.VerticalScrollbarSize = 10;
+            this.lblAbout.AutoSize = true;
+            this.lblAbout.BackColor = System.Drawing.Color.Transparent;
+            this.lblAbout.Location = new System.Drawing.Point(95, 69);
+            this.lblAbout.Name = "lblAbout";
+            this.lblAbout.Size = new System.Drawing.Size(305, 60);
+            this.lblAbout.TabIndex = 0;
+            this.lblAbout.Text = "This application was made by LAGS@IMVU\r\nWe made this to defeat losers that like t" +
+    "o abuse \r\ncrash products. grow the fuck up.";
+            this.lblAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAbout.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.lblAbout.WrapToLine = true;
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(20, 340);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(106, 20);
+            this.lblStatus.TabIndex = 3;
+            this.lblStatus.Text = "Loading status...";
+            this.lblStatus.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.lblStatus.UseCustomForeColor = true;
+            this.ClientSize = new System.Drawing.Size(530, 355);
+            this.Controls.Add(this.metroTabControl1);
+            this.Controls.Add(this.lblStatus);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "MainForm";
+            this.Opacity = 0.8D;
+            this.Style = MetroFramework.MetroColorStyle.Red;
+            this.Text = "IMVU Anti Crash ";
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.metroTabControl1.ResumeLayout(false);
+            this.tabAntiCrash.ResumeLayout(false);
+            this.tabAntiCrash.PerformLayout();
+            this.tabAbout.ResumeLayout(false);
+            this.tabAbout.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+    }
+}
