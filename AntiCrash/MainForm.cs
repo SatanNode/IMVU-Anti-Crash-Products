@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.ServiceProcess;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using Microsoft.Win32;
@@ -24,45 +23,33 @@ namespace AntiCrashApp
 
         private void btnEnableSound_Click(object sender, EventArgs e)
         {
-            if (ManageAudioService("start"))
-            {
-                SetSoundStatus(false);
-                UpdateStatusLabel(false);
-            }
+            RunAudioServiceCommand("net start audiosrv");
+            SetSoundStatus(false);
+            UpdateStatusLabel(false);
         }
 
         private void btnDisableSound_Click(object sender, EventArgs e)
         {
-            if (ManageAudioService("stop"))
-            {
-                SetSoundStatus(true);
-                UpdateStatusLabel(true);
-            }
+            RunAudioServiceCommand("net stop audiosrv");
+            SetSoundStatus(true);
+            UpdateStatusLabel(true);
         }
 
-        private bool ManageAudioService(string action)
+        private void RunAudioServiceCommand(string command)
         {
             try
             {
-                using (ServiceController sc = new ServiceController("audiosrv"))
+                ProcessStartInfo psi = new ProcessStartInfo("cmd.exe", $"/c {command}")
                 {
-                    if (action == "start" && sc.Status == ServiceControllerStatus.Stopped)
-                    {
-                        sc.Start();
-                        sc.WaitForStatus(ServiceControllerStatus.Running, TimeSpan.FromSeconds(10));
-                    }
-                    else if (action == "stop" && sc.Status == ServiceControllerStatus.Running)
-                    {
-                        sc.Stop();
-                        sc.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(10));
-                    }
-                    return true;
-                }
+                    Verb = "runas",
+                    UseShellExecute = true,
+                    WindowStyle = ProcessWindowStyle.Hidden
+                };
+                Process.Start(psi);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to {action} audio service: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -74,47 +61,45 @@ namespace AntiCrashApp
 
         private void UpdateStatusLabel(bool isSafeMode)
         {
-            lblStatus.Text = isSafeMode
-                ? "You are currently in safe mode"
-                : "You are not immune to crashing";
-            lblStatus.ForeColor = isSafeMode
-                ? System.Drawing.Color.MediumSeaGreen
-                : System.Drawing.Color.Red;
+            if (isSafeMode)
+            {
+                lblStatus.Text = "You are currently in safe mode";
+                lblStatus.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            }
+            else
+            {
+                lblStatus.Text = "You are not immune to crashing";
+                lblStatus.ForeColor = System.Drawing.Color.Red;
+            }
         }
 
         private bool GetSoundStatus()
         {
-            try
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryKeyPath))
             {
-                using (RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryKeyPath))
+                if (key != null)
                 {
-                    if (key != null)
+                    object value = key.GetValue(RegistryValueName);
+                    if (value != null && bool.TryParse(value.ToString(), out bool isSafeMode))
                     {
-                        object value = key.GetValue(RegistryValueName);
-                        return value != null && bool.TryParse(value.ToString(), out bool isSafeMode) && isSafeMode;
+                        return isSafeMode;
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Failed to read registry: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return false;
+            return false; 
         }
 
         private void SetSoundStatus(bool isSafeMode)
         {
-            try
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPath))
             {
-                using (RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPath))
-                {
-                    key.SetValue(RegistryValueName, isSafeMode.ToString());
-                }
+                key.SetValue(RegistryValueName, isSafeMode.ToString());
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Failed to write to registry: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        }
+
+        private void lblAbout_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
